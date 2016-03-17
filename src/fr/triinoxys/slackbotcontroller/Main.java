@@ -25,7 +25,7 @@ import javax.swing.JTextField;
 
 public class Main{
 
-	private JFrame form;
+	private JFrame frame;
 	private JTextField txtChannel;
 	private JTextField txtUsername;
 	private JTextField txtMessage;
@@ -43,7 +43,7 @@ public class Main{
 			public void run(){
 				try{
 					window = new Main();
-					window.form.setVisible(true);
+					window.frame.setVisible(true);
 				}catch(Exception e){
 					e.printStackTrace();
 				}
@@ -63,55 +63,56 @@ public class Main{
 	 */
 	@SuppressWarnings({"unchecked", "rawtypes"})
 	private void initialize(){
-		form = new JFrame();
-		form.setType(Type.POPUP);
-		form.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		form.setIconImage(Toolkit.getDefaultToolkit().getImage(Main.class.getResource("/fr/triinoxys/slackbotcontroller/Slack.png")));
-		form.setResizable(false);
-		form.setTitle("Slackbot Controller - by TriiNoxYs");                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      form.setTitle("Slackbot Controller - by TriiNoxYs");
-		form.setBounds(100, 100, 653, 232);
-		form.getContentPane().setLayout(null);
+		frame = new JFrame();
 		
-		JLabel lblChannel = new JLabel("Username:");
-		lblChannel.setBounds(10, 43, 64, 21);
-		form.getContentPane().add(lblChannel);
+		frame.setType(Type.POPUP);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Main.class.getResource("/resources/Slack.png")));
+		frame.setResizable(false);
+		frame.setTitle("Slackbot Controller - by TriiNoxYs");                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      frame.setTitle("Slackbot Controller - by TriiNoxYs");
+		frame.setBounds(100, 100, 653, 232);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblUsername = new JLabel("Username:");
+		lblUsername.setBounds(10, 43, 64, 21);
+		frame.getContentPane().add(lblUsername);
 		
 		JLabel lblChannel_1 = new JLabel("Channel:");
 		lblChannel_1.setBounds(10, 11, 64, 21);
-		form.getContentPane().add(lblChannel_1);
+		frame.getContentPane().add(lblChannel_1);
 		
 		JLabel lblMessage = new JLabel("Message:");
 		lblMessage.setBounds(10, 75, 64, 21);
-		form.getContentPane().add(lblMessage);
+		frame.getContentPane().add(lblMessage);
 		
 		txtChannel = new JTextField();
 		txtChannel.setText("#discussion");
 		txtChannel.setBounds(75, 12, 552, 20);
-		form.getContentPane().add(txtChannel);
+		frame.getContentPane().add(txtChannel);
 		txtChannel.setColumns(10);
 		
 		txtUsername = new JTextField();
 		txtUsername.setText("JavaBOT");
 		txtUsername.setBounds(75, 44, 552, 20);
-		form.getContentPane().add(txtUsername);
+		frame.getContentPane().add(txtUsername);
 		txtUsername.setColumns(10);
 		
 		txtMessage = new JTextField();
 		txtMessage.setText("Hello World !");
 		txtMessage.setBounds(75, 76, 552, 20);
-		form.getContentPane().add(txtMessage);
+		frame.getContentPane().add(txtMessage);
 		txtMessage.setColumns(10);
 		
 		comboIcontype = new JComboBox();
 		comboIcontype.setModel(new DefaultComboBoxModel(new String[]{"Icon Emoji", "Icon URL"}));
 		comboIcontype.setBounds(10, 116, 101, 20);
-		form.getContentPane().add(comboIcontype);
+		frame.getContentPane().add(comboIcontype);
 		
 		txtIcon = new JTextField();
 		txtIcon.setText(":st-pasteak:");
 		txtIcon.setColumns(10);
 		txtIcon.setBounds(121, 116, 506, 20);
-		form.getContentPane().add(txtIcon);
+		frame.getContentPane().add(txtIcon);
 		
 		JButton btnNewButton = new JButton("Send message");
 		btnNewButton.addActionListener(new ActionListener(){
@@ -124,7 +125,7 @@ public class Main{
 			}
 		});
 		btnNewButton.setBounds(10, 147, 617, 42);
-		form.getContentPane().add(btnNewButton);
+		frame.getContentPane().add(btnNewButton);
 	}
 	
 	// -----HTTP POST request-----
