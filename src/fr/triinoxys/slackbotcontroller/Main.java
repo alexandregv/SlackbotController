@@ -23,7 +23,7 @@ import javax.swing.JTextField;
  *
  */
 
-public class GUI{
+public class Main{
 
 	private JFrame form;
 	private JTextField txtChannel;
@@ -32,7 +32,7 @@ public class GUI{
 	private JTextField txtIcon;
 	private JComboBox<?> comboIcontype;
 	
-	static GUI window;
+	static Main window;
 
 	/**
 	 * Launch the application.
@@ -42,7 +42,7 @@ public class GUI{
 
 			public void run(){
 				try{
-					window = new GUI();
+					window = new Main();
 					window.form.setVisible(true);
 				}catch(Exception e){
 					e.printStackTrace();
@@ -54,7 +54,7 @@ public class GUI{
 	/**
 	 * Create the application.
 	 */
-	public GUI(){
+	public Main(){
 		initialize();
 	}
 
@@ -66,7 +66,7 @@ public class GUI{
 		form = new JFrame();
 		form.setType(Type.POPUP);
 		form.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		form.setIconImage(Toolkit.getDefaultToolkit().getImage(GUI.class.getResource("/fr/triinoxys/slackbotcontroller/Slack.png")));
+		form.setIconImage(Toolkit.getDefaultToolkit().getImage(Main.class.getResource("/fr/triinoxys/slackbotcontroller/Slack.png")));
 		form.setResizable(false);
 		form.setTitle("Slackbot Controller - by TriiNoxYs");                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      form.setTitle("Slackbot Controller - by TriiNoxYs");
 		form.setBounds(100, 100, 653, 232);
