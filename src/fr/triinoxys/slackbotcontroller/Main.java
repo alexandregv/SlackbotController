@@ -131,7 +131,7 @@ public class Main{
 	// -----HTTP POST request-----
 	private void sendPost() throws Exception{
 		
-		String url = "https://hooks.slack.com/services/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";
+		String url = "SLACK WEBHOOK URL";
 		URL obj = new URL(url);
 		HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
 		String channel, username, text, icon;
